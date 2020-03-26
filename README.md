@@ -48,7 +48,7 @@ download the insomnia to test the routes on the backend
 
 ```
 <p align = "center">
-  <a href = "https://insomnia.rest/download/" target = " "> <img src =" https://insomnia.rest/images/run.svg "alt ="Download Insominia"> </a>
+  <a href = "https://insomnia.rest/download/" target = " "> <img src ="./run.svg"alt ="Download Insominia"> </a>
 </p>
 
 
