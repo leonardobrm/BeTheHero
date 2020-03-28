@@ -1,13 +1,13 @@
 <h1 align = "center">
-    <img alt = "BeTheHero" title = "#BeTheHero" src = "./logo.svg" width = "250px" />
+    <img alt = "BeTheHero" title = "#BeTheHero" src = "./images/logo.svg" width = "250px" />
 </h1>
 
-# Project
+# :rocket:  Project :rocket: 
 
 Be The Hero is a project that aims to connect people who are willing to help ONGs.
 
 <h1 align = "center">
-    <img alt = "Página de login" title = "Página de login" src = "./login-page.png" width = "450px" />
+    <img alt = "Página de login" title = "Página de login" src = "./images/login-page.png" width = "450px" />
 </h1>
 
 ## :rocket: technologies used :rocket:
@@ -24,7 +24,7 @@ Be The Hero is a project that aims to connect people who are willing to help ONG
 
 
 
-## Run Project
+## :rocket:  Run Project :rocket: 
 
 ```
 
@@ -48,7 +48,7 @@ download the insomnia to test the routes on the backend
 
 ```
 <p align = "center">
-  <a href = "https://insomnia.rest/download/" target = " "> <img src ="./run.svg"alt ="Download Insominia"> </a>
+  <a href = "https://insomnia.rest/download/" target = " "> <img src ="./images/run.svg"alt ="Download Insominia"> </a>
 </p>
 
 
