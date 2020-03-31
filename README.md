@@ -7,7 +7,7 @@
 Be The Hero is a project that aims to connect people who are willing to help ONGs.
 
 <h1 align = "center">
-    <img alt = "Página de login" title = "Página de login" src = "./images/login-page.png" width = "450px" />
+    <img alt = "Página de login" title = "Página de login" src = "./images/login-black.jpeg" width = "450px" />
 </h1>
 
 ## :rocket: technologies used :rocket:
