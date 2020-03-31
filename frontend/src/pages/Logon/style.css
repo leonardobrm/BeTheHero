@@ -6,13 +6,13 @@
 
   display: flex;
   align-items: center;
-  justify-items: center;
+  justify-content: space-between;
 }
 
 .logon-container section.form{
   width: 100%;
   max-width: 350px;
-  margin-right: 80px;
+  /* margin-right: 80px; */
 }
 
 .logon-container section.form form{
@@ -22,31 +22,9 @@
 .logon-container section.form h1{
   font-size: 32px;
   margin-bottom: 32px;
+  color: #fff;
 }
 
 /* Inputs and butons global css*/
 
-.logon-container section.form a{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 40px;
-  color: #41414d;
-  font-size: 18px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: opacity 0.3s;
-
-
-  text-decoration: none;
-}
-
-.logon-container section.form a svg{
-  margin-right: 8px;
-}
-
-
-.logon-container section.form a:hover{
-  opacity: 0.8;
-}
 
