@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 
-// import api from '../../services/api';
+// import swal from 'sweetalert';
+import swal from 'sweetalert2';
 
+import api from '../../services/api';
 import './style.css';
 
 import LogoImg from '../../assets/logo.svg';
@@ -11,20 +13,41 @@ import LogoImg from '../../assets/logo.svg';
 function Register() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [whatsApp, setWhatsApp] = useState('');
+  const [whatsapp, setWhatsapp] = useState('');
   const [city, setCity] = useState('');
   const [uf, setUf] = useState('');
 
-  function handleRegister(e) {
+  async function handleRegister(e) {
     e.preventDefault();
 
-    // const data = {
-    //   name,
-    //   email,
-    //   city,
-    //   whatsApp,
-    //   uf,
-    // };
+    const data = {
+      name,
+      email,
+      city,
+      whatsapp,
+      uf,
+    };
+
+    try {
+      const response = await api.post('ongs', data);
+      swal.fire({
+        title: 'Success',
+        text: `Seu ID de acesso ${response.data.id}`,
+        icon: 'success',
+        button: 'OK',
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+      });
+    } catch (err) {
+      swal.fire({
+        title: 'error',
+        text: 'erro no cadastro, tente novamente',
+        icon: 'success',
+        button: 'OK',
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+      });
+    }
   }
 
   return (
@@ -44,7 +67,7 @@ function Register() {
             Voltar para o logon
           </Link>
         </section>
-        <form onSubmit={handleRegister}>
+        <form id="text" onSubmit={handleRegister}>
           <input
             placeholder="Nome da ONG"
             value={name}
@@ -58,8 +81,8 @@ function Register() {
           />
           <input
             placeholder="WhatsApp"
-            value={whatsApp}
-            onChange={(e) => setWhatsApp(e.target.value)}
+            value={whatsapp}
+            onChange={(e) => setWhatsapp(e.target.value)}
           />
           <div className="input-group">
             <input
@@ -83,5 +106,4 @@ function Register() {
     </div>
   );
 }
-
 export default Register;
