@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
-
-// import swal from 'sweetalert';
 import swal from 'sweetalert2';
 
 import api from '../../services/api';
@@ -17,6 +15,8 @@ function Register() {
   const [city, setCity] = useState('');
   const [uf, setUf] = useState('');
 
+  const history = useHistory();
+
   async function handleRegister(e) {
     e.preventDefault();
 
@@ -30,20 +30,23 @@ function Register() {
 
     try {
       const response = await api.post('ongs', data);
-      swal.fire({
-        title: 'Success',
-        text: `Seu ID de acesso ${response.data.id}`,
+      await swal.fire({
+        title: 'Sucesso',
+        text: `Seu ID de acesso: ${response.data.id}`,
         icon: 'success',
         button: 'OK',
+        background: 'black',
         allowOutsideClick: false,
         allowEscapeKey: false,
       });
+      history.push('/');
     } catch (err) {
       swal.fire({
-        title: 'error',
-        text: 'erro no cadastro, tente novamente',
-        icon: 'success',
+        title: 'Erro',
+        text: 'Erro no cadastro, tente novamente',
+        icon: 'error',
         button: 'OK',
+        background: 'black',
         allowOutsideClick: false,
         allowEscapeKey: false,
       });
@@ -67,7 +70,7 @@ function Register() {
             Voltar para o logon
           </Link>
         </section>
-        <form id="text" onSubmit={handleRegister}>
+        <form onSubmit={handleRegister}>
           <input
             placeholder="Nome da ONG"
             value={name}

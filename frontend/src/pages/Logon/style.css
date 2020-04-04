@@ -28,3 +28,22 @@
 /* Inputs and butons global css*/
 
 
+
+/*Modal*/
+
+.swal2-content{
+  color: #fff;
+}
+.swal2-title{
+  color: #fff;
+}
+.swal2-popup{
+  width: 350px;
+  height: 350px;
+  border: 1px solid #27272e;
+}
+
+.swal2-styled.swal2-confirm{
+  background: #fff;
+  color: black
+}
