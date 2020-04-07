@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { FiPower, FiTrash2 } from 'react-icons/fi';
+import swal from 'sweetalert2';
 
 import './style.css';
 
@@ -10,6 +11,7 @@ import LogoImg from '../../assets/logo.svg';
 function Profile() {
   const [incidents, setIncidents] = useState([]);
 
+  const history = useHistory();
   const ongId = localStorage.getItem('ongId');
   const ongName = localStorage.getItem('ongName');
 
@@ -17,13 +19,41 @@ function Profile() {
     api
       .get('profiles', {
         headers: {
-          Authorization: ongId,
+          authorization: ongId,
         },
       })
       .then((response) => {
         setIncidents(response.data);
       });
   }, [ongId]);
+
+  async function handleDeleteIncident(id) {
+    try {
+      await api.delete(`incidents/${id}`, {
+        headers: {
+          Authorization: ongId,
+        },
+      });
+      setIncidents(incidents.filter((incident) => incident.id !== id));
+      console.log(ongId);
+    } catch (err) {
+      swal.fire({
+        title: 'Erro',
+        text: 'Erro ao deletar caso, tente novamente',
+        icon: 'error',
+        button: 'OK',
+        background: 'black',
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+      });
+    }
+  }
+
+  function hundleLogout() {
+    localStorage.clear();
+    history.push('/');
+  }
+
   return (
     <div className="profile-container">
       <header>
@@ -33,7 +63,7 @@ function Profile() {
         <Link className="button" to="/incidents/new">
           Cadastrar novo caso
         </Link>
-        <button type="button">
+        <button onClick={hundleLogout} type="button">
           <FiPower syze={18} color="#E02041" />
         </button>
       </header>
@@ -55,8 +85,11 @@ function Profile() {
               }).format(incident.value)}
             </p>
 
-            <button type="button">
-              <FiTrash2 size={20} color="#a8a8b3" />
+            <button
+              onClick={() => handleDeleteIncident(incident.id)}
+              type="button"
+            >
+              <FiTrash2 size={20} color="red" />
             </button>
           </li>
         ))}
