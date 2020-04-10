@@ -14,7 +14,7 @@ Be The Hero is a project that aims to connect people who are willing to help ONG
 - [Node.JS] (https://nodejs.org/en/) 
 - [React JS] (https://reactjs.org) 
 - [React Native] (https://reactnative.dev/) in coming :construction:
-- [Expo] (https://expo.io/) in coming :construction:
+- [Expo] (https://expo.io/) 
 - [eslint] (https://eslint.org/)
 - [prettier] (https://prettier.io/)
 - [knex.js(sqlite)] (http://knexjs.org/)
