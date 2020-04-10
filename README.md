@@ -12,7 +12,7 @@ Be The Hero is a project that aims to connect people who are willing to help ONG
 
 ## :rocket: technologies used :rocket:
 - [Node.JS] (https://nodejs.org/en/) 
-- [React JS] (https://reactjs.org) in coming:construction:
+- [React JS] (https://reactjs.org) 
 - [React Native] (https://reactnative.dev/) in coming :construction:
 - [Expo] (https://expo.io/) in coming :construction:
 - [eslint] (https://eslint.org/)
